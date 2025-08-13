@@ -1,0 +1,36 @@
+<div class="container py-4">
+
+  <h1 class="fw-bold text-primary mb-4">
+    <i class="bi bi-file-earmark-text me-2"></i> View Post
+  </h1>
+
+  <a href="#" routerLink="/post/index" class="btn btn-primary mb-4">
+    Back
+  </a>
+
+  <!-- Card com detalhes -->
+  <div class="card shadow-sm border-0 rounded-4">
+    <div class="card-body p-4">
+
+      <!-- ID -->
+      <div class="mb-4 pb-3 border-bottom">
+        <div class="text-muted small fw-semibold text-uppercase">ID</div>
+        <div class="fs-5 fw-bold">{{ post.id }}</div>
+      </div>
+
+      <!-- Title -->
+      <div class="mb-4 pb-3 border-bottom">
+        <div class="text-muted small fw-semibold text-uppercase">Title</div>
+        <div class="fs-5 fw-bold">{{ post.title }}</div>
+      </div>
+
+      <!-- Body -->
+      <div>
+        <div class="text-muted small fw-semibold text-uppercase">Body</div>
+        <div class="fs-5">{{ post.body }}</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

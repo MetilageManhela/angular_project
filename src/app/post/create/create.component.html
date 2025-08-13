@@ -1,0 +1,52 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Create New Post</h5>
+                </div>
+                <div class="card-body">
+                    <a routerLink="/post/index" class="btn btn-outline-primary btn-sm mb-3">
+                        <i class="bi bi-arrow-left"></i> Back
+                    </a>
+
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+
+                        <!-- Title -->
+                        <div class="form-floating mb-2">
+                            <input
+                                type="text"
+                                id="title"
+                                formControlName="title"
+                                class="form-control form-control-sm"
+                                placeholder="Title">
+                            <label for="title">Title</label>
+                            <div *ngIf="f['title'].touched && f['title'].invalid" class="text-danger small mt-1">
+                                <div *ngIf="f['title'].errors?.['required']">Title is required.</div>
+                            </div>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="form-floating mb-3">
+                            <textarea
+                                id="body"
+                                formControlName="body"
+                                class="form-control form-control-sm"
+                                placeholder="Body"
+                                style="height: 100px"></textarea>
+                            <label for="body">Body</label>
+                            <div *ngIf="f['body'].touched && f['body'].invalid" class="text-danger small mt-1">
+                                <div *ngIf="f['body'].errors?.['required']">Body is required.</div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm w-100" [disabled]="!form.valid">
+                            Submit Post
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
